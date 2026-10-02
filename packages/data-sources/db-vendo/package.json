@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "@erb-tools/core": "workspace:*",
+    "cached-hafas-client": "^5.1.9",
     "db-vendo-client": "^6.11.3"
   },
   "devDependencies": {

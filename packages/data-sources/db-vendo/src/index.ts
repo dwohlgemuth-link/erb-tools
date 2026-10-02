@@ -1,12 +1,15 @@
 import { createClient } from 'db-vendo-client';
 import { profile } from 'db-vendo-client/p/dbweb/index.js';
+import { createCachedHafasClient as withCache } from 'cached-hafas-client';
+import { createInMemoryStore } from 'cached-hafas-client/stores/in-memory.js';
 import { TransitDataPort, TransitDeparture } from '@erb-tools/core';
 
 export class DBVendoAdapter implements TransitDataPort {
   private client: any;
 
   constructor(userAgent = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36') {
-    this.client = createClient(profile, userAgent);
+    const rawClient = createClient(profile, userAgent);
+    this.client = withCache(rawClient, createInMemoryStore());
   }
 
   async getLiveDepartures(stationId: string, operator = 'eurobahn', limit = 10): Promise<TransitDeparture[]> {
