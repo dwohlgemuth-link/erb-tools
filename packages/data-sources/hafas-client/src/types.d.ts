@@ -1,3 +1,2 @@
-declare module 'hafas-client';
-declare module 'db-hafas';
-declare module 'hafas-client/p/rmv/index.js';
+declare module 'db-vendo-client';
+declare module 'db-vendo-client/p/dbnav/index.js';
