@@ -1,2 +1,2 @@
-export * from './domain/types/index';
-export * from './domain/ports/TransitDataPort';
+export type { EurobahnTrip, EurobahnDeparture, EurobahnDisruption } from './domain/types/index';
+export type { TransitDataPort } from './domain/ports/TransitDataPort';
