@@ -1,15 +1,17 @@
-import createHafas from 'db-hafas';
+import { createClient } from 'hafas-client';
+import { profile as rmvProfile } from 'hafas-client/p/rmv/index.js';
 import { TransitDataPort, TransitDeparture, normalizeDeparture } from '@erb-tools/core';
 
 export class DBHafasAdapter implements TransitDataPort {
   private client: any;
 
   constructor(userAgent = 'erb-tools-tracker-dwohlgemuth-link') {
-    this.client = createHafas(userAgent);
+    this.client = createClient(rmvProfile, userAgent);
   }
 
   async getLiveDepartures(stationId: string, operator = 'eurobahn', limit = 10): Promise<TransitDeparture[]> {
-    const res = await this.client.departures(stationId, { results: limit * 2 }); // fetch more to account for filtering
+    // RMV endpoint tracks national DB and regional trains (like eurobahn) effectively.
+    const res = await this.client.departures(stationId, { results: limit * 3 }); // fetch more to account for filtering
     const rawDepartures = res.departures || res;
     
     let departures = rawDepartures.map((dep: any) => normalizeDeparture(dep));

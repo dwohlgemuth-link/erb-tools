@@ -181,9 +181,6 @@ importers:
       '@erb-tools/core':
         specifier: workspace:*
         version: link:../../core
-      db-hafas:
-        specifier: ^5.0.3
-        version: 5.1.0
       hafas-client:
         specifier: ^6.2.0
         version: 6.3.6
@@ -328,9 +325,6 @@ packages:
   '@types/range-parser@1.2.7':
     resolution: {integrity: sha512-hKormJbkJqzQGhziax5PItDUTMAM9uE2XXQmM37dyd4hVM+5aVl7oVxMVUiVQn2oCQFN/LKCZdvSM0pFRqbSmQ==}
 
-  '@types/retry@0.12.0':
-    resolution: {integrity: sha512-wWKOClTTiizcZhXnPY4wikVAwmdYHp8q6DmC+EJUzAMsycb7HB32Kh9RN4+0gExjmPmZSAQjgURXIGATPegAvA==}
-
   '@types/retry@0.12.2':
     resolution: {integrity: sha512-XISRgDJ2Tc5q4TRqvgJtzsRkFYNJzZrhTdtMoGVBttwzzQJkPnS3WWTFc7kuDRoPtPakl+T+OfdEUjYJj7Jbow==}
 
@@ -391,10 +385,6 @@ packages:
     resolution: {integrity: sha512-+ys997U96po4Kx/ABpBCqhA9EuxJaQWDQg7295H4hBphv3IZg0boBKuwYpt4YXp6MZ5AmZQnU/tyMTlRpaSejg==}
     engines: {node: '>= 0.4'}
 
-  capture-stack-trace@1.0.2:
-    resolution: {integrity: sha512-X/WM2UQs6VMHUtjUDnZTRI+i1crWteJySFzr9UpGoQa4WQffXVTTXuekjl7TjZRlcF2XfjgITT0HxZ9RnxeT0w==}
-    engines: {node: '>=0.10.0'}
-
   cheerio-select@2.1.0:
     resolution: {integrity: sha512-9v9kG0LvzrlcungtnJtpGNxY+fzECQKhK4EGJX2vByejiMX84MFNQw4UxPJl3bFbTMw+Dfs37XaIkCwTZfLh4g==}
 
@@ -444,10 +434,6 @@ packages:
   css-what@6.2.2:
     resolution: {integrity: sha512-u/O3vwbptzhMs3L1fQE82ZSLHQQfto5gyZzwteVIEyeaY5Fc7R4dapF/BvRoSYFeqfBk4m0V1Vafq5Pjv25wvA==}
     engines: {node: '>= 6'}
-
-  db-hafas@5.1.0:
-    resolution: {integrity: sha512-+GOPy25BwZ92CyWtnGTx2zqJDvWEd8BSxEqRehvinIApfR0j/CapdISWEOx9hAms0gWTwJqSht/ebZZukAN7Iw==}
-    engines: {node: '>=10'}
 
   debug@2.6.9:
     resolution: {integrity: sha512-bC7ElrdJaJnPbAP+1EotYvqZsb3ecl5wi6Bfi6BJTUcNowp6cvspg0jXznRTKDjm/E7AdgFBVeAPVMNcKGsHMA==}
@@ -548,9 +534,6 @@ packages:
     resolution: {integrity: sha512-Bdcs4+3qlpVlx2NRn6fgX2Ue2/gGRaPeawebgclM0ERSCqDpA+owF1fdPwjJUTAJWMTuAaxjDf+hzb0/4eKvvw==}
     engines: {node: '>= 0.10.0'}
 
-  fetch-ponyfill@7.1.0:
-    resolution: {integrity: sha512-FhbbL55dj/qdVO3YNK7ZEkshvj3eQ7EuIGV2I6ic/2YiocvyWv+7jg2s4AyS0wdRU75s3tA8ZxI/xPigb0v5Aw==}
-
   finalhandler@1.3.2:
     resolution: {integrity: sha512-aA4RyPcd3badbdABGDuTXCMTtOneUCAYH/gxoYRTZlIJdF0YPWuGqiAsIrhNnnqdXGswYk6dGujem4w80UJFhg==}
     engines: {node: '>= 0.8'}
@@ -601,11 +584,6 @@ packages:
   gps-distance@0.0.4:
     resolution: {integrity: sha512-A0Y86IZW5xlozayFdF/trgWir9h3b4cU4e36llhTKzp2uDCxdZijA4ZXSYElfTdYd7fSImWVgIR3Zf0b6adrvg==}
     engines: {node: '>= 0.10.x', npm: '>= 1.2.x'}
-
-  hafas-client@5.26.5:
-    resolution: {integrity: sha512-QHi0IaHRAcr/BeZS1WaY2rI5Y2a8NHm+A/WLXODVeAWjW/z/AQR459FZrWyviX5qCH6rYdvoBSqlGnL4uxE5Ww==}
-    engines: {node: '>=10'}
-    deprecated: I don't have the capacity to maintain older versions of hafas-client, sorry. Please use hafas-client@latest.
 
   hafas-client@6.3.6:
     resolution: {integrity: sha512-cuoEUGkO+oEngWGlOoVcpwIfLaXbcwIV231/+H3O2plNwof1pamFOYkx3TFtA+4yW2Egt8QKFhWf/i8iQIH6/g==}
@@ -678,15 +656,8 @@ packages:
   isarray@2.0.5:
     resolution: {integrity: sha512-xHjhDr3cNBK0BzdUJSPXZntQUx/mwMS5Rw4A7lPJ90XGAO6ISP/ePDNuo0vhqOZU+UD5JoodwCAAoZQd3FeAKw==}
 
-  lodash.get@4.4.2:
-    resolution: {integrity: sha512-z+Uw/vLuy6gQe8cfaFWD7p0wVv8fJl3mbzXh33RS+0oW2wvUqiRXiQ69gLWSLpgB5/6sU+r6BlQR0MBILadqTQ==}
-    deprecated: This package is deprecated. Use the optional chaining (?.) operator instead.
-
   lodash@4.18.1:
     resolution: {integrity: sha512-dMInicTPVE8d1e5otfwmmjlxkZoUpiVLwyeTdUsi/Caj/gfzzblBcCE5sRHV/AsjuCmxWrte2TNGSYuCeCq+0Q==}
-
-  luxon@1.28.1:
-    resolution: {integrity: sha512-gYHAa180mKrNIUJCbwpmD0aTu9kV0dREDrwNnuyFAsO1Wt0EVYSZelPnJlbj9HplzXX/YWXHFTL45kvZ53M0pw==}
 
   luxon@3.7.2:
     resolution: {integrity: sha512-vtEhXh/gNjI9Yg1u4jX/0YVPMvxzHuGgCm6tC5kZyb08yjGWGnqAjGJvcXbqQR2P3MyMEFnRbpcdFS6PBcLqew==}
@@ -733,15 +704,6 @@ packages:
     resolution: {integrity: sha512-+EUsqGPLsM+j/zdChZjsnX51g4XrHFOIXwfnCVPGlQk/k5giakcKsuxCObBRu6DSm9opw/O6slWbJdghQM4bBg==}
     engines: {node: '>= 0.6'}
 
-  node-fetch@2.6.13:
-    resolution: {integrity: sha512-StxNAxh15zr77QvvkmveSQ8uCQ4+v5FkvNTj0OESmiHu+VRi/gXArXtkWMElOsOUNLtUEvI4yS+rdtOHZTwlQA==}
-    engines: {node: 4.x || >=6.0.0}
-    peerDependencies:
-      encoding: ^0.1.0
-    peerDependenciesMeta:
-      encoding:
-        optional: true
-
   node-fetch@2.7.0:
     resolution: {integrity: sha512-c4FRfUm/dbcWZ7U+1Wq0AwCyFL+3nt2bEw05wfxSz+DWpWsitgmSgYmy2dQdWyKC1694ELPqMs/YzUSNozLt8A==}
     engines: {node: 4.x || >=6.0.0}
@@ -758,10 +720,6 @@ packages:
     resolution: {integrity: sha512-W67iLl4J2EXEGTbfeHCffrjDfitvLANg0UlX3wFUUSTx92KXRFegMHUVgSqE+wvhAbi4WqjGg9czysTV2Epbew==}
     engines: {node: '>= 0.4'}
 
-  object-scan@13.9.3:
-    resolution: {integrity: sha512-gb27kO8ovRqt9V3BfPygvV/Dfd5cIk+QEX/V5D85M7kYimkcb9iTyKZLjSaojyPJUk/Ugr7yU36xaKaIVHbMOA==}
-    engines: {node: '>= 10'}
-
   object-scan@19.0.5:
     resolution: {integrity: sha512-5rr03NDQJ3oW4gWamHxON45ZLoFe6VCsRJ+trMlYWXlnYTGsuX/eD6MPp9yItzqFhd0pUpgzPm0jrYoeubIsIA==}
     engines: {node: '>= 16'}
@@ -770,17 +728,9 @@ packages:
     resolution: {integrity: sha512-oVlzkg3ENAhCk2zdv7IJwd/QUD4z2RxRwpkcGY8psCVcCYZNq4wYnVWALHM+brtuJjePWiYF/ClmuDr8Ch5+kg==}
     engines: {node: '>= 0.8'}
 
-  p-retry@4.6.2:
-    resolution: {integrity: sha512-312Id396EbJdvRONlngUx0NydfrIQ5lsYu0znKVUzVvArzEIt08V1qhtyESbGVd1FGX7UKtiFp5uwKZdM8wIuQ==}
-    engines: {node: '>=8'}
-
   p-retry@6.2.1:
     resolution: {integrity: sha512-hEt02O4hUct5wtwg4H4KcWgDdm+l1bOaEy/hWzd8xtXB9BqxTWBBhb+2ImAtH4Cv4rPjV76xN3Zumqk3k3AhhQ==}
     engines: {node: '>=16.17'}
-
-  p-throttle@4.1.1:
-    resolution: {integrity: sha512-TuU8Ato+pRTPJoDzYD4s7ocJYcNSEZRvlxoq3hcPI2kZDZ49IQ1Wkj7/gDJc3X7XiEAAvRGtDzdXJI0tC3IL1g==}
-    engines: {node: '>=10'}
 
   p-throttle@5.1.0:
     resolution: {integrity: sha512-+N+s2g01w1Zch4D0K3OpnPDqLOKmLcQ4BvIFq3JC0K29R28vUOjWpO+OJZBNt8X9i3pFCksZJZ0YXkUGjaFE6g==}
@@ -801,14 +751,6 @@ packages:
 
   path-to-regexp@0.1.13:
     resolution: {integrity: sha512-A/AGNMFN3c8bOlvV9RreMdrv7jsmF9XIfDeCd87+I8RNg6s78BhJxMu69NEMHBSJFxKidViTEdruRwEk/WIKqA==}
-
-  pinkie-promise@2.0.1:
-    resolution: {integrity: sha512-0Gni6D4UcLTbv9c57DfxDGdr41XfgUjqWZu492f0cIGr16zDU06BWP/RAEvOuo7CQ0CNjHaLlM59YJJFm3NWlw==}
-    engines: {node: '>=0.10.0'}
-
-  pinkie@2.0.4:
-    resolution: {integrity: sha512-MnUuEycAemtSaeFSjXKW/aroV7akBbY+Sv+RkyqFjgAe73F+MR0TBWKBRDkmfWq/HiFmdavfZ1G7h4SPZXaCSg==}
-    engines: {node: '>=0.10.0'}
 
   possible-typed-array-names@1.1.0:
     resolution: {integrity: sha512-/+5VFTchJDoVj3bhoqi6UeymcD00DAwb1nJwamzPvHEszJ4FpF6SNNbUbOS8yI56qHzdV8eK0qEfOSiodkTdxg==}
@@ -953,26 +895,6 @@ packages:
     resolution: {integrity: sha512-BNGbWLfd0eUPabhkXUVm0j8uuvREyTh5ovRa/dyow/BqAbZJyC+5fU+IzQOzmAKzYqYRAISoRhdQr3eIZ/PXqg==}
     engines: {node: '>= 0.8'}
 
-  vbb-parse-line@1.0.0:
-    resolution: {integrity: sha512-/xtFJAWmoulUD3kWX9kPQyn9tDMncuGu22Bfe1C1/Pwf/pJAGd7zKA1IpRf9rrdEP+AN1ECD6SHsGbNcqLbR5w==}
-    engines: {node: '>=8'}
-
-  vbb-parse-ticket@0.2.1:
-    resolution: {integrity: sha512-Di1/AOrKGrGTBfdrZZXSCmq73E/RVuGys12BAFraHu5Swwj/TTXfvV8FrnHifCHEMoZIfLmH4avnF7xVa+46Sw==}
-    engines: {node: '>=6'}
-
-  vbb-short-station-name@1.0.1:
-    resolution: {integrity: sha512-3pAW9RtwqTeQvTABYRJVkBNmbxkCBxrQyALNRkG+owiZUgt4yT3aH2ln25TV0EzEqZzgjVjcK1RwOyL/MMYz5w==}
-    engines: {node: '>=6'}
-
-  vbb-stations@7.3.2:
-    resolution: {integrity: sha512-KETDgdAFmnfvRgGWg0fLT2/0ZxZiyYWxt4Ggy4Bsco+zpjBGPZxT23emR/KTBoZX9C8Y8hEoEqkPRQ7MzFmJ3g==}
-    engines: {node: '>=8'}
-
-  vbb-translate-ids@4.0.0:
-    resolution: {integrity: sha512-acc8aCheKRO10vEMIN7a/1chAkD30sW28MUkLbylOtCHD7aGOTGnB6ztGeszFER8qpx915pMyoWggGteF4vB3g==}
-    engines: {node: '>=6'}
-
   webidl-conversions@3.0.1:
     resolution: {integrity: sha512-2JAn3z8AR6rjK8Sm8orRC0h/bcl/DqL7tRPdGZ4I1CjdF+EaMLmYxBHyXuKL849eucPFhvBoxMsflfOb8kxaeQ==}
 
@@ -1050,8 +972,6 @@ snapshots:
   '@types/qs@6.15.1': {}
 
   '@types/range-parser@1.2.7': {}
-
-  '@types/retry@0.12.0': {}
 
   '@types/retry@0.12.2': {}
 
@@ -1139,8 +1059,6 @@ snapshots:
       call-bind-apply-helpers: 1.0.2
       get-intrinsic: 1.3.0
 
-  capture-stack-trace@1.0.2: {}
-
   cheerio-select@2.1.0:
     dependencies:
       boolbase: 1.0.0
@@ -1211,13 +1129,6 @@ snapshots:
       nth-check: 2.1.1
 
   css-what@6.2.2: {}
-
-  db-hafas@5.1.0:
-    dependencies:
-      hafas-client: 5.26.5
-    transitivePeerDependencies:
-      - encoding
-      - supports-color
 
   debug@2.6.9:
     dependencies:
@@ -1333,12 +1244,6 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  fetch-ponyfill@7.1.0:
-    dependencies:
-      node-fetch: 2.6.13
-    transitivePeerDependencies:
-      - encoding
-
   finalhandler@1.3.2:
     dependencies:
       debug: 2.6.9
@@ -1396,34 +1301,6 @@ snapshots:
   gopd@1.2.0: {}
 
   gps-distance@0.0.4: {}
-
-  hafas-client@5.26.5:
-    dependencies:
-      '@derhuerst/br2nl': 1.0.0
-      '@derhuerst/round-robin-scheduler': 1.0.4
-      capture-stack-trace: 1.0.2
-      content-type: 1.0.5
-      create-hash: 1.2.0
-      fetch-ponyfill: 7.1.0
-      google-polyline: 1.0.3
-      gps-distance: 0.0.4
-      https-proxy-agent: 5.0.1
-      lodash: 4.18.1
-      luxon: 1.28.1
-      object-scan: 13.9.3
-      p-retry: 4.6.2
-      p-throttle: 4.1.1
-      pinkie-promise: 2.0.1
-      qs: 6.16.0
-      slugg: 1.2.1
-      vbb-parse-line: 1.0.0
-      vbb-parse-ticket: 0.2.1
-      vbb-short-station-name: 1.0.1
-      vbb-stations: 7.3.2
-      vbb-translate-ids: 4.0.0
-    transitivePeerDependencies:
-      - encoding
-      - supports-color
 
   hafas-client@6.3.6:
     dependencies:
@@ -1520,11 +1397,7 @@ snapshots:
 
   isarray@2.0.5: {}
 
-  lodash.get@4.4.2: {}
-
   lodash@4.18.1: {}
-
-  luxon@1.28.1: {}
 
   luxon@3.7.2: {}
 
@@ -1556,10 +1429,6 @@ snapshots:
 
   negotiator@0.6.3: {}
 
-  node-fetch@2.6.13:
-    dependencies:
-      whatwg-url: 5.0.0
-
   node-fetch@2.7.0:
     dependencies:
       whatwg-url: 5.0.0
@@ -1570,26 +1439,17 @@ snapshots:
 
   object-inspect@1.13.4: {}
 
-  object-scan@13.9.3: {}
-
   object-scan@19.0.5: {}
 
   on-finished@2.4.1:
     dependencies:
       ee-first: 1.1.1
 
-  p-retry@4.6.2:
-    dependencies:
-      '@types/retry': 0.12.0
-      retry: 0.13.1
-
   p-retry@6.2.1:
     dependencies:
       '@types/retry': 0.12.2
       is-network-error: 1.3.2
       retry: 0.13.1
-
-  p-throttle@4.1.1: {}
 
   p-throttle@5.1.0: {}
 
@@ -1609,12 +1469,6 @@ snapshots:
   parseurl@1.3.3: {}
 
   path-to-regexp@0.1.13: {}
-
-  pinkie-promise@2.0.1:
-    dependencies:
-      pinkie: 2.0.4
-
-  pinkie@2.0.4: {}
 
   possible-typed-array-names@1.1.0: {}
 
@@ -1787,18 +1641,6 @@ snapshots:
   utils-merge@1.0.1: {}
 
   vary@1.1.2: {}
-
-  vbb-parse-line@1.0.0: {}
-
-  vbb-parse-ticket@0.2.1: {}
-
-  vbb-short-station-name@1.0.1: {}
-
-  vbb-stations@7.3.2:
-    dependencies:
-      lodash.get: 4.4.2
-
-  vbb-translate-ids@4.0.0: {}
 
   webidl-conversions@3.0.1: {}
 

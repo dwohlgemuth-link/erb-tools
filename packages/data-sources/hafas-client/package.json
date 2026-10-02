@@ -9,12 +9,11 @@
   },
   "dependencies": {
     "@erb-tools/core": "workspace:*",
-    "hafas-client": "^6.2.0",
-    "db-hafas": "^5.0.3"
+    "hafas-client": "^6.2.0"
   },
   "devDependencies": {
-    "typescript": "^5.0.0",
-    "@types/node": "^20.0.0"
+    "@types/node": "^20.0.0",
+    "typescript": "^5.0.0"
   },
   "exports": {
     ".": {
