@@ -1,26 +1,23 @@
-export interface EurobahnTrip {
-  id: string;
-  lineName: string;
-  direction: string;
-}
-
-export interface EurobahnDeparture {
+export interface TransitDeparture {
   tripId: string;
   stationId: string;
-  plannedTime: string; // ISO string
-  actualTime?: string; // ISO string
-  delayInMinutes: number;
-  status: 'HEALTHY' | 'DELAYED' | 'CANCELLED' | 'SEV';
-  plannedPlatform: string;
-  actualPlatform?: string;
+  stationName: string;
   lineName: string;
+  operatorName: string;
+  plannedTime: string;
+  actualTime?: string;
+  delayInMinutes: number;
+  platform: string;
   direction: string;
+  status: 'HEALTHY' | 'DELAYED' | 'CANCELLED' | 'SEV';
 }
 
-export interface EurobahnDisruption {
+export interface TransitDisruption {
   id: string;
+  affectedLine: string;
+  type: string;
   title: string;
   description: string;
-  affectedLines: string[];
+  isEurobahnSpecific: boolean;
   status: 'ACTIVE' | 'RESOLVED';
 }

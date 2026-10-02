@@ -1,6 +1,6 @@
 import { createClient } from 'hafas-client';
 import { profile as dbProfile } from 'db-hafas';
-import { TransitDataPort, EurobahnDeparture, normalizeDeparture } from '@erb-tools/core';
+import { TransitDataPort, TransitDeparture, normalizeDeparture } from '@erb-tools/core';
 
 export class DBHafasAdapter implements TransitDataPort {
   private client: any;
@@ -9,10 +9,17 @@ export class DBHafasAdapter implements TransitDataPort {
     this.client = createClient(dbProfile, userAgent);
   }
 
-  async getLiveDepartures(stationId: string, limit = 10): Promise<EurobahnDeparture[]> {
+  async getLiveDepartures(stationId: string, operator = 'eurobahn', limit = 10): Promise<TransitDeparture[]> {
     const res = await this.client.departures(stationId, { results: limit });
-    const departures = res.departures || res;
+    const rawDepartures = res.departures || res;
     
-    return departures.map((dep: any) => normalizeDeparture(dep));
+    let departures = rawDepartures.map((dep: any) => normalizeDeparture(dep));
+    
+    if (operator) {
+      const lowerOp = operator.toLowerCase();
+      departures = departures.filter((d: TransitDeparture) => d.operatorName.toLowerCase().includes(lowerOp));
+    }
+
+    return departures;
   }
 }

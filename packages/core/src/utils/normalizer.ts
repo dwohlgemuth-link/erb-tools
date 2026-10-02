@@ -1,14 +1,14 @@
-import { EurobahnDeparture, EurobahnDisruption } from '../domain/types/index';
+import { TransitDeparture } from '../domain/types/index';
 
 /**
- * Normalizes a raw departure object into the strict EurobahnDeparture schema.
+ * Normalizes a raw departure object into the strict generalized TransitDeparture schema.
  */
-export function normalizeDeparture(raw: any): EurobahnDeparture {
+export function normalizeDeparture(raw: any): TransitDeparture {
   const plannedTime = raw.plannedTime || raw.plannedWhen || raw.when;
   const actualTime = raw.actualTime || raw.when || raw.plannedWhen;
   const delayInMinutes = raw.delayInMinutes ?? (raw.delay != null ? Math.round(raw.delay / 60) : 0);
   
-  let status: EurobahnDeparture['status'] = 'HEALTHY';
+  let status: TransitDeparture['status'] = 'HEALTHY';
   if (raw.cancelled) {
     status = 'CANCELLED';
   } else if (raw.isSEV || raw.line?.name?.includes('SEV')) {
@@ -20,13 +20,14 @@ export function normalizeDeparture(raw: any): EurobahnDeparture {
   return {
     tripId: raw.tripId || 'unknown',
     stationId: raw.stationId || raw.stop?.id || 'unknown',
+    stationName: raw.stationName || raw.stop?.name || 'Unknown Station',
     plannedTime: new Date(plannedTime).toISOString(),
     actualTime: actualTime ? new Date(actualTime).toISOString() : undefined,
     delayInMinutes,
     status,
-    plannedPlatform: raw.plannedPlatform || raw.platform || '',
-    actualPlatform: raw.actualPlatform || raw.platform,
+    platform: raw.plannedPlatform || raw.platform || raw.actualPlatform || '',
     lineName: raw.lineName || raw.line?.name || '',
+    operatorName: raw.line?.operator?.name || raw.operatorName || 'eurobahn',
     direction: raw.direction || ''
   };
 }

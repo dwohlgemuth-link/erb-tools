@@ -1,8 +1,8 @@
-import { EurobahnDeparture, EurobahnDisruption } from '../types/index';
+import { TransitDeparture, TransitDisruption } from '../types/index';
 
 export interface TransitDataPort {
-  /** Fetch live departures for a specific station */
-  getLiveDepartures(stationId: string, limit?: number): Promise<EurobahnDeparture[]>;
-  /** Fetch active disruptions affecting the network */
-  getDisruptions?(): Promise<EurobahnDisruption[]>;
+  /** Fetch live departures for a specific station, optionally filtered by operator */
+  getLiveDepartures(stationId: string, operator?: string, limit?: number): Promise<TransitDeparture[]>;
+  /** Fetch active disruptions, optionally filtered by operator */
+  getDisruptions?(operator?: string): Promise<TransitDisruption[]>;
 }

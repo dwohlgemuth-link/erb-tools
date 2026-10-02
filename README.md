@@ -1,22 +1,22 @@
 # 🚄 erb-tools
-> **The open-source developer toolkit and API ecosystem for eurobahn (ERB) transit data in Germany.**
+> **Generalized Open-Source Framework and Developer Toolkit specifically optimized for tracking eurobahn (ERB) transit operations.**
 
-Welcome to `erb-tools`! This project provides an incredibly flexible, modular, and type-safe ecosystem to fetch, process, and serve live public transit data for the eurobahn network. Built with Hexagonal Architecture in a Turborepo monorepo, it enables rapid development of CLI tools, backend APIs, and scraping fallbacks—all sharing a single, robust business logic core.
+Welcome to `erb-tools`! This project provides an incredibly flexible, generalized domain-driven ecosystem to fetch, process, and serve live public transit data. It defaults to extracting Eurobahn metrics across regional transit operations. Built with Hexagonal Architecture in a Turborepo monorepo, it enables rapid development of CLI tools, backend APIs, and scraping fallbacks.
 
 ---
 
 ## 🏗 Architecture Overview (Ports & Adapters)
 
-This monorepo strictly follows **Hexagonal Architecture**. The business logic is isolated in the `@erb-tools/core` package. External systems (like HAFAS or website scraping) are implemented as *Adapters* that fulfill the *Ports* (Interfaces) defined in the Core.
+This monorepo strictly follows **Domain-Driven Design** and **Hexagonal Architecture**. The business logic is generalized (e.g. `TransitDeparture`) and isolated in the `@erb-tools/core` package. External systems (like HAFAS or website scraping) are implemented as *Adapters* that fulfill the *Ports* defined in the Core, filtering down to eurobahn logic seamlessly.
 
 ```text
 📦 erb-tools
  ┣ 📂 packages
- ┃ ┣ 📂 core                     # 🧠 The Business Brain (Domain Types, Ports/Interfaces)
+ ┃ ┣ 📂 core                     # 🧠 Generalized Business Domain & Transit Ports
  ┃ ┃ ┗ 📜 NO external frameworks or network libraries here. Pure TypeScript.
  ┃ ┣ 📂 data-sources             # 🔌 The Adapters
  ┃ ┃ ┣ 📂 hafas-client           # Implementation of TransitDataPort using db-hafas
- ┃ ┃ ┗ 📂 web-scraper            # Fallback scraping of eurobahn.de traffic updates
+ ┃ ┃ ┗ 📂 web-scraper            # Fallback scraping of traffic updates
  ┃ ┗ 📂 entrypoints              # 🚀 The Consumer Applications
  ┃   ┣ 📂 api                    # Express.js REST API providing clean JSON
  ┃   ┗ 📂 cli                    # Commander-based terminal interface
@@ -53,11 +53,11 @@ pnpm build
 ## 🎮 How to Run
 
 ### 1. The CLI Tool
-Get live departures for a station (e.g., Dortmund Hbf: `8000080`) directly in your terminal:
+Get live generalized departures for a station (e.g., Dortmund Hbf: `8000080`), strictly filtered for Eurobahn operators:
 
 ```bash
 cd packages/entrypoints/cli
-node dist/index.js departures 8000080
+node dist/index.js departures 8000080 --operator eurobahn
 ```
 
 ### 2. The REST API
@@ -68,7 +68,9 @@ cd packages/entrypoints/api
 # Uses the PORT env variable or defaults to 3000
 pnpm start
 ```
-Test the endpoint: [http://localhost:3000/v1/departures/8000080](http://localhost:3000/v1/departures/8000080)
+Test the generalized eurobahn endpoints:
+- Departures: [http://localhost:3000/v1/eurobahn/departures/8000080](http://localhost:3000/v1/eurobahn/departures/8000080)
+- Disruptions: [http://localhost:3000/v1/eurobahn/disruptions](http://localhost:3000/v1/eurobahn/disruptions)
 
 ---
 

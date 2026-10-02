@@ -10,6 +10,7 @@
   "dependencies": {
     "@erb-tools/core": "workspace:*",
     "@erb-tools/hafas-client": "workspace:*",
+    "@erb-tools/web-scraper": "workspace:*",
     "express": "^4.18.2"
   },
   "devDependencies": {
