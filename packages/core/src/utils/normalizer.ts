@@ -1,4 +1,4 @@
-import { TransitDeparture } from '../domain/types/index';
+import { TransitDeparture } from '../domain/types/index.js';
 
 /**
  * Normalizes a raw departure object into the strict generalized TransitDeparture schema.

@@ -6,7 +6,9 @@
     "erb-tools": "./dist/index.js"
   },
   "scripts": {
-    "build": "tsc"
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "dev": "npm run build && npm start"
   },
   "dependencies": {
     "@erb-tools/core": "workspace:*",

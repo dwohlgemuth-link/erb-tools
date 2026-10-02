@@ -1,3 +1,3 @@
-export type { TransitDeparture, TransitDisruption } from './domain/types/index';
-export type { TransitDataPort } from './domain/ports/TransitDataPort';
-export { normalizeDeparture } from './utils/normalizer';
+export type { TransitDeparture, TransitDisruption } from './domain/types/index.js';
+export type { TransitDataPort } from './domain/ports/TransitDataPort.js';
+export { normalizeDeparture } from './utils/normalizer.js';

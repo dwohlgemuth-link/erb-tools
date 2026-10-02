@@ -1,4 +1,4 @@
-import { TransitDeparture, TransitDisruption } from '../types/index';
+import { TransitDeparture, TransitDisruption } from '../types/index.js';
 
 export interface TransitDataPort {
   /** Fetch live departures for a specific station, optionally filtered by operator */
