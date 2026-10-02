@@ -35,7 +35,7 @@ This monorepo strictly follows **Hexagonal Architecture**. The business logic is
 Clone the repository and install all dependencies:
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/erb-tools.git
+git clone https://github.com/dwohlgemuth-link/erb-tools.git
 cd erb-tools
 pnpm install
 ```
