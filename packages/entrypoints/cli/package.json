@@ -1,0 +1,20 @@
+{
+  "name": "@erb-tools/cli",
+  "version": "1.0.0",
+  "type": "module",
+  "bin": {
+    "erb-tools": "./dist/index.js"
+  },
+  "scripts": {
+    "build": "tsc"
+  },
+  "dependencies": {
+    "@erb-tools/core": "workspace:*",
+    "@erb-tools/hafas-client": "workspace:*",
+    "commander": "^11.1.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.0.0",
+    "@types/node": "^20.0.0"
+  }
+}

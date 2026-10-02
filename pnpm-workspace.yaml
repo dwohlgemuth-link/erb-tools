@@ -1,0 +1,4 @@
+packages:
+  - 'packages/*'
+  - 'packages/data-sources/*'
+  - 'packages/entrypoints/*'
