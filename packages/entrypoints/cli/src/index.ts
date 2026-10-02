@@ -7,16 +7,18 @@ const transitPort = new DBHafasAdapter('erb-tools-cli');
 
 program
   .name('erb-tools')
-  .description('CLI to some eurobahn transit data utilities')
+  .description('CLI to fetch eurobahn transit data')
   .version('1.0.0');
 
 program.command('departures')
   .description('Get live departures for a station')
   .argument('<stationId>', 'Station ID')
-  .action(async (stationId) => {
+  .option('-l, --limit <number>', 'Number of results', '10')
+  .action(async (stationId, options) => {
     try {
-      const departures = await transitPort.getLiveDepartures(stationId);
-      console.table(departures, ['plannedTime', 'delayMinutes', 'platform', 'line', 'direction']);
+      const limit = parseInt(options.limit, 10);
+      const departures = await transitPort.getLiveDepartures(stationId, limit);
+      console.table(departures, ['plannedTime', 'delayInMinutes', 'status', 'plannedPlatform', 'lineName', 'direction']);
     } catch (error: any) {
       console.error('Error fetching departures:', error.message);
     }

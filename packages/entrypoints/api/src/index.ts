@@ -7,10 +7,11 @@ const transitPort = new DBHafasAdapter('erb-tools-api');
 
 app.get('/v1/departures/:stationId', async (req, res) => {
   try {
-    const departures = await transitPort.getLiveDepartures(req.params.stationId);
-    res.json(departures);
+    const limit = req.query.limit ? parseInt(req.query.limit as string, 10) : 10;
+    const departures = await transitPort.getLiveDepartures(req.params.stationId, limit);
+    res.json({ success: true, data: departures });
   } catch (error: any) {
-    res.status(500).json({ error: error.message });
+    res.status(500).json({ success: false, error: error.message });
   }
 });
 
