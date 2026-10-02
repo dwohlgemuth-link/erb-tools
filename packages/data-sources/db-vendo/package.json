@@ -1,5 +1,5 @@
 {
-  "name": "@erb-tools/hafas-client",
+  "name": "@erb-tools/db-vendo",
   "version": "1.0.0",
   "type": "module",
   "main": "dist/index.js",

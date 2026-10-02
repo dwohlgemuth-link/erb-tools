@@ -1,10 +1,10 @@
 #!/usr/bin/env node
 import { Command } from 'commander';
-import { DBHafasAdapter } from '@erb-tools/hafas-client';
+import { DBVendoAdapter } from '@erb-tools/db-vendo';
 import { EurobahnScraper } from '@erb-tools/web-scraper';
 
 const program = new Command();
-const transitPort = new DBHafasAdapter('erb-tools-cli');
+const transitPort = new DBVendoAdapter('erb-tools-cli');
 const scraper = new EurobahnScraper();
 
 program

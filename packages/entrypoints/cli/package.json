@@ -12,7 +12,7 @@
   },
   "dependencies": {
     "@erb-tools/core": "workspace:*",
-    "@erb-tools/hafas-client": "workspace:*",
+    "@erb-tools/db-vendo": "workspace:*",
     "@erb-tools/web-scraper": "workspace:*",
     "commander": "^11.1.0"
   },

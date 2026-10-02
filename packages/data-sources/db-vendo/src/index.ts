@@ -1,24 +1,22 @@
 import { createClient } from 'db-vendo-client';
-import { profile as dbnavProfile } from 'db-vendo-client/p/dbnav/index.js';
+import { profile } from 'db-vendo-client/p/dbweb/index.js';
 import { TransitDataPort, TransitDeparture } from '@erb-tools/core';
 
-export class DBHafasAdapter implements TransitDataPort {
+export class DBVendoAdapter implements TransitDataPort {
   private client: any;
 
-  constructor(userAgent = 'erb-tools-tracker-dwohlgemuth-link') {
-    this.client = createClient(dbnavProfile, userAgent);
+  constructor(userAgent = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36') {
+    this.client = createClient(profile, userAgent);
   }
 
   async getLiveDepartures(stationId: string, operator = 'eurobahn', limit = 10): Promise<TransitDeparture[]> {
-    const res = await this.client.departures(stationId, { results: limit * 2 });
+    const res = await this.client.departures(stationId, { duration: 60 });
     
-    // DB Vendo Client returns departures inside 'journeys' or directly as array depending on endpoint,
-    // usually client.departures() returns { departures: [...] }
+    // DB Vendo Client typically returns departures inside 'departures' or as a raw array.
     const rawDepartures = res.departures || res || [];
     
     // Map modern Vendo response to core types
     let departures: TransitDeparture[] = rawDepartures.map((dep: any) => {
-      // Vendo typically structures line under dep.line
       const lineName = dep.line?.name || dep.line?.id || '';
       const operatorName = dep.line?.operator?.name || dep.line?.operator || 'DB';
       
@@ -37,7 +35,7 @@ export class DBHafasAdapter implements TransitDataPort {
         stationName: dep.stop?.name || 'Unknown Station',
         lineName,
         operatorName,
-        plannedTime: new Date(plannedTime).toISOString(),
+        plannedTime: plannedTime ? new Date(plannedTime).toISOString() : new Date().toISOString(),
         actualTime: actualTime ? new Date(actualTime).toISOString() : undefined,
         delayInMinutes: delay,
         platform: dep.plannedPlatform || dep.platform || '',

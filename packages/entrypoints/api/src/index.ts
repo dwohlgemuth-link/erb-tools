@@ -1,10 +1,10 @@
 import express from 'express';
-import { DBHafasAdapter } from '@erb-tools/hafas-client';
+import { DBVendoAdapter } from '@erb-tools/db-vendo';
 import { EurobahnScraper } from '@erb-tools/web-scraper';
 
 const app = express();
 const port = process.env.PORT || 3000;
-const transitPort = new DBHafasAdapter('erb-tools-api');
+const transitPort = new DBVendoAdapter('erb-tools-api');
 const scraper = new EurobahnScraper();
 
 app.get('/v1/eurobahn/departures/:stationId', async (req, res) => {

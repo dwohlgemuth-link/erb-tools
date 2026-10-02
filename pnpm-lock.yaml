@@ -176,7 +176,7 @@ importers:
         specifier: ^5.0.0
         version: 5.9.3
 
-  packages/data-sources/hafas-client:
+  packages/data-sources/db-vendo:
     dependencies:
       '@erb-tools/core':
         specifier: workspace:*
@@ -216,9 +216,9 @@ importers:
       '@erb-tools/core':
         specifier: workspace:*
         version: link:../../core
-      '@erb-tools/hafas-client':
+      '@erb-tools/db-vendo':
         specifier: workspace:*
-        version: link:../../data-sources/hafas-client
+        version: link:../../data-sources/db-vendo
       '@erb-tools/web-scraper':
         specifier: workspace:*
         version: link:../../data-sources/web-scraper
@@ -241,9 +241,9 @@ importers:
       '@erb-tools/core':
         specifier: workspace:*
         version: link:../../core
-      '@erb-tools/hafas-client':
+      '@erb-tools/db-vendo':
         specifier: workspace:*
-        version: link:../../data-sources/hafas-client
+        version: link:../../data-sources/db-vendo
       '@erb-tools/web-scraper':
         specifier: workspace:*
         version: link:../../data-sources/web-scraper
